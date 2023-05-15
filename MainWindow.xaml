@@ -156,25 +156,25 @@
 
                     <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                         <Image
-                            Width="20"
-                            Height="20"
+                            Width="26"
+                            Height="23"
                             Margin="5,0,5,0"
                             RenderOptions.BitmapScalingMode="Fant" 
-                            Source="./Icons/Phone.png"/>
+                            Source="Icons/Phone.png"/>
                         <Image
                             Width="20"
                             Height="20"
                             Margin="5,0,5,0"
                             RenderOptions.BitmapScalingMode="Fant" 
-                            Source="./Icons/C.png"/>
+                            Source="Icons/C.png"/>
 
                     </StackPanel>
                 </Grid>
 
 
             </Border>
-            
-            
+
+
             <!--Here we will design the message box-->
             <ListView ItemsSource="{Binding SelectedContact.Messages}" Background="Transparent"
                       BorderThickness="0"
@@ -203,12 +203,12 @@
                     <Image Source="./Icons/Plus.png"
                            Width="20" Height="20"
                            RenderOptions.BitmapScalingMode="Fant"
-                           Margin="5,5,5,0"></Image>
+                           Margin="5,5,5,0"/>
                     <Image Source="./Icons/Send.png"
                            Width="20" Height="20"
                            Margin="5,5,16,0"
-                           RenderOptions.BitmapScalingMode="Fant"></Image>
-                    
+                           RenderOptions.BitmapScalingMode="Fant"/>
+
                 </StackPanel>
 
             </Grid>
