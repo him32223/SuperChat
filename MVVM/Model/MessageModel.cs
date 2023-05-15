@@ -9,7 +9,7 @@ namespace SuperChat.MVVM.Model
     class MessageModel
     {
         public string Username { get; set; }
-        public string UsernamColor { get; set; }
+        public string UsernameColor { get; set; }
 
         public string ImageSource { get; set;}
 

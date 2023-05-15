@@ -1,4 +1,5 @@
-﻿using SuperChat.MVVM.Model;
+﻿using SuperChat.Core;
+using SuperChat.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,20 +9,55 @@ using System.Threading.Tasks;
 
 namespace SuperChat.MVVM.ViewModel
 {
-    class MainViewModel
+    class MainViewModel : ObservableObjects
     {
         public ObservableCollection<MessageModel> Messages { get; set; }
         public ObservableCollection<ContactModel> Contacts { get; set; }
+
+        //Commands//
+
+        public RelayCommand SendCommand { get; set; }
+
+
+        private ContactModel _selectedContact;
+
+        public ContactModel SelectedContact { 
+            get { return _selectedContact; }
+            set { _selectedContact = value;
+                OnPropertyChanged();
+            } }
+
+        public string _message;
+        public string Message
+        {
+            get { return _message; }    
+            set { _message = value;
+                OnPropertyChanged();
+
+            }       
+             
+        }
+
 
         public MainViewModel()
         {
             Messages = new ObservableCollection<MessageModel>();
             Contacts = new ObservableCollection<ContactModel>();
 
+            SendCommand = new RelayCommand(o => {
+                Messages.Add(new MessageModel
+                {
+                    Message=Message,
+                    FirstMessage = false
+                });
+
+                Message = "";
+            });
+
             Messages.Add(new MessageModel()
             {
                 Username = "Kvern",
-                UsernamColor = "#409aff",
+                UsernameColor = "#409aff",
                 ImageSource = "https://i.ytimg.com/vi/tQgInNU-9sc/maxresdefault.jpg",
                 Message = "a4 alot things to do gg liao",
                 Time = DateTime.Now,
@@ -33,7 +69,7 @@ namespace SuperChat.MVVM.ViewModel
                 Messages.Add(new MessageModel()
                 {
                     Username = "Jia EN",
-                    UsernamColor = "#409aff",
+                    UsernameColor = "#409aff",
                     ImageSource = "https://i.ytimg.com/vi/tQgInNU-9sc/maxresdefault.jpg",
                     Message = "LALALLAALALAL",
                     Time = DateTime.Now,
@@ -47,7 +83,7 @@ namespace SuperChat.MVVM.ViewModel
                 Messages.Add(new MessageModel()
                 {
                     Username = "Jia Hong",
-                    UsernamColor = "#409aff",
+                    UsernameColor = "#409aff",
                     ImageSource = "https://i.ytimg.com/vi/tQgInNU-9sc/maxresdefault.jpg",
                     Message = "U Enro",
                     Time = DateTime.Now,
@@ -58,7 +94,7 @@ namespace SuperChat.MVVM.ViewModel
             Messages.Add(new MessageModel()
             {
                 Username = "Jia Hong",
-                UsernamColor = "#409aff",
+                UsernameColor = "#409aff",
                 ImageSource = "https://i.ytimg.com/vi/tQgInNU-9sc/maxresdefault.jpg",
                 Message = "I Enroll",
                 Time = DateTime.Now,
