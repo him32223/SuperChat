@@ -47,7 +47,7 @@ namespace SuperChat.MVVM.ViewModel
             SendCommand = new RelayCommand(o => {
                 Messages.Add(new MessageModel
                 {
-                    Message=Message,
+                    Message= Message,
                     FirstMessage = false
                 });
 
@@ -64,7 +64,7 @@ namespace SuperChat.MVVM.ViewModel
                 IsNativeOrigin = false,
                 FirstMessage = true,
             });
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 Messages.Add(new MessageModel()
                 {

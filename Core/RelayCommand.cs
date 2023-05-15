@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace SuperChat.Core
 {
-    internal class RelayCommand : Icommand
+    internal class RelayCommand : ICommand
     {
         private Action<object> execute;
         private Func<object, bool> canExecute;
@@ -27,7 +27,7 @@ namespace SuperChat.Core
 
         public bool CanExecute(object parameter)
         {
-            return this.CanExecute == null || this.CanExecute(parameter);
+            return this.canExecute == null || this.canExecute(parameter);
         }
 
         public void Execute(object parameter)
