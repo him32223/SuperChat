@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\C.png" />
+    <None Remove="Icons\Camera.png" />
+    <None Remove="Icons\Phone.png" />
+    <None Remove="Icons\Plus.png" />
+    <None Remove="Icons\Send.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icons\C.png" />
+    <Content Include="Icons\Phone.png" />
+    <Content Include="Icons\Plus.png" />
+    <Content Include="Icons\Send.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="MVVM\View\" />
+  </ItemGroup>
+
+</Project>
